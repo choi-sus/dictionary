@@ -1,10 +1,138 @@
-.App {
-  text-align: center;
+body {
+  background-image: url("./nice_snow.png");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App {
+  text-align: left; font-family: 'Noto Serif KR', serif;
+}
+
+.App header {
+  background-color: #9DBEB9; padding: 25px 0; position: fixed; width: 100%; left: 0; top: 0;
+}
+
+.App header a {
+  text-decoration: none;
+}
+
+.App header h1 {
+  color: #194350; margin: 0; text-align: center;
+}
+
+.App .container{
+  width: 1100px; margin: 150px auto 75px;
+}
+
+.App .container::after {
+  content: ''; display: block; visibility: hidden; clear: both;
+}
+
+.App .container .card {
+  float: left; width: calc(33.33% - 20px); border-radius: 20px; overflow: hidden; transition: all 0.4s ease-in-out; cursor: pointer;
+}
+
+.App .container .card:hover{
+  box-shadow: 2px 2px 15px 0px grey;
+}
+
+.App .container .card:not(:nth-child(3n+1)) {
+  margin-left: 30px;
+}
+
+.App .container .card:nth-child(n+4) {
+  margin-top: 30px;
+}
+
+.App .container .card h3 {
+  margin: 0; padding: 20px 0 20px 25px; background-color: #194350; color: #9DBEB9; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
+}
+
+.App .container .card .content {
+  padding: 25px; background-color: #fbccc1;
+}
+
+.App .container .card .content > span{
+  overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2;  -webkit-box-orient: vertical; height: 50px;
+}
+
+.App .container .card .content .color {
+  margin-right: 5px;
+}
+
+.App .container .card .content p {
+  color: #57857e;; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2;  -webkit-box-orient: vertical; height: 50px;
+}
+
+.App .addPage {
+  width: 70px; height: 70px; border-radius: 50%; background-color: #194350; position: fixed; right: 50px; bottom: 30px; cursor: pointer; transition: transform 0.3s ease-in-out;
+}
+
+.App .addPage:hover {
+  transform: rotate(90deg);
+}
+
+.App .addPage span {
+  width: 35px; height: 5px; background-color: #fbccc1; display: block; border-radius: 15px; margin: 0 auto;
+}
+
+.App .addPage span:first-child {
+  transform: translateY(32.5px);
+}
+
+.App .addPage span:last-child {
+  transform: translateY(27px) rotate(90deg);
+}
+
+/* modal */
+.modal_content {
+  position: fixed; width: 100vw; height: 100vh; background-color: #000000c2; left: 0; top: 0px; z-index: 5;
+}
+
+.modal_content .modal_card {
+  width: 400px;  border-radius: 20px; overflow: auto; max-height: 450px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+
+.modal_content .modal_card h3 {
+  margin: 0; padding: 20px 25px; background-color: #194350; color: #9DBEB9; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
+}
+
+.modal_content .modal_card .content {
+  padding: 25px; background-color: #fbccc1;
+}
+
+.modal_content .modal_card .content > span{
+  margin-bottom: 50px; display: block;
+}
+
+.modal_content .modal_card .content .color {
+  margin-right: 5px;
+}
+
+.modal_content .modal_card .content p {
+  color: #57857e; margin: 0 0 50px 0;
+}
+
+.modal_content .modal_card .content .card_btn {
+  margin-top: 20px;
+}
+
+.modal_content .modal_card .content .card_btn::after {
+  content: ''; display: block; visibility: hidden; clear: both;
+}
+
+.modal_content .modal_card .content .card_btn > div {
+  width: calc(100% - 49px); float: left;
+}
+
+.modal_content .modal_card .content .card_btn > div .btn {
+  font-size: 30px; color: #FF8882; cursor: pointer;
+}
+
+.modal_content .modal_card .content .card_btn > div .min{
+  margin-left: 10px;
+}
+
+.modal_content .modal_card .content .card_btn button{
+  cursor: pointer; border: none; background-color: #FF8882; color: #fff; font-family: 'Noto Serif KR',serif; font-size: 15px; padding: 5px 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
